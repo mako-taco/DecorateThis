@@ -1,0 +1,53 @@
+
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "no-alert": 2,
+    "no-bitwise": 2,
+    "curly": 2,
+    "eqeqeq": 2,
+    "no-eq-null": 2,
+    "guard-for-in": 2,
+    "no-empty": 2,
+    "no-use-before-define": 0,
+    "no-obj-calls": 2,
+    "no-unused-vars": 2,
+    "new-cap": 2,
+    "no-shadow": 0,
+    "strict": 2,
+    "no-invalid-regexp": 2,
+    "no-comma-dangle": 2,
+    "no-undef": 2,
+    "no-new": 2,
+    "no-extra-semi": 2,
+    "no-debugger": 2,
+    "no-caller": 2,
+    "no-unreachable":2,
+    "no-underscore-dangle": 0,
+
+    // ES6 Specific Linting
+    "object-shorthand": [2, "always"],
+    "generator-star-spacing": [2, "before"],
+    "no-var": 1,
+
+    // Stylistic Issues
+    "eol-last": 2,
+    "camelcase": 2,
+    "comma-style": [2, "last"],
+    "func-names": 2,
+    "no-multiple-empty-lines": [2, {"max": 2}],
+    "no-trailing-spaces": 2,
+    "semi": 2,
+    "quotes": 0,
+    "space-before-function-paren": [1, {"anonymous": "always", "named": "never"}],
+    "space-after-keywords": [2, "always"]
+  },
+  "globals": {
+    "React": true
+  },
+  "env":{
+    "browser": true,
+    "es6": true,
+    "node": true
+  }
+}
