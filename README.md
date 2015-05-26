@@ -1,9 +1,11 @@
-# AnnotateThis
+# DecorateThis
 Simple, vanilla JS type checking through ES7 decorators
+
+...and a few other decorators, to boot.
 
 # Type Validation
 ```js
-import {param, returns} from 'AnnotateThis';
+import {param, returns} from 'DecorateThis';
 
 class Point {
     constructor() {
@@ -28,7 +30,7 @@ class Point {
 Automatically memoize functions for greater efficiency
 # Memoization
 ```js
-import memoize from 'AnnotateThis';
+import memoize from 'DecorateThis';
 let obj = {
     // Results of the function are stored in a map, which maps arguments
     // to the function's result. This expensive func is only run a single
@@ -42,7 +44,7 @@ let obj = {
 
 # Property descriptors
 ```js
-import {enumerable, writable, configurable} from 'AnnotateThis';
+import {enumerable, writable, configurable} from 'DecorateThis';
 
 class T {
     @configurable(false)
@@ -117,7 +119,7 @@ class T {
 As with all types, these are composable.
 
 ## Built-in Types
-AnnotateThis provides a small library of helper functions for doing type
+DecorateThis provides a small library of helper functions for doing type
 validation.
 
 ```js 
@@ -127,7 +129,7 @@ import {
     ArrayOf,
     Optional,
     Any
-} from 'AnnotateThis/types';
+} from 'DecorateThis/types';
 
 let util = {
     @param(ArrayOf(Any))
