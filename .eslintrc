@@ -24,6 +24,8 @@
     "no-caller": 2,
     "no-unreachable":2,
     "no-underscore-dangle": 0,
+    "guard-for-in": 0,
+    "new-cap": 0,
 
     // ES6 Specific Linting
     "object-shorthand": [2, "always"],
