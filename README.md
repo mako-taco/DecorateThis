@@ -1,7 +1,7 @@
 # DecorateThis
 Simple, vanilla JS type checking through ES7 decorators
-
 ...and a few other decorators, to boot.
+
 [![npm version](https://badge.fury.io/js/decorate-this.svg)](http://badge.fury.io/js/decorate-this)
 [![Build Status](https://travis-ci.org/mako-taco/DecorateThis.svg?branch=master)](https://travis-ci.org/mako-taco/DecorateThis)
 
