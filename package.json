@@ -1,7 +1,7 @@
 {
   "name": "decorate-this",
-  "version": "0.0.1",
-  "description": "Bare bones project template featuing FluxThis, Webpack, Mocha, and React.",
+  "version": "0.0.2",
+  "description": "Simple, vanilla JS type checking through ES7 decorators ...and a few other decorators, to boot.",
   "main": "index.js",
   "repository": {
     "type": "git",
