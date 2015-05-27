@@ -1,17 +1,14 @@
 {
-  "name": "react-fluxthis-webpack-mocha-gulp",
-  "version": "1.1.1",
+  "name": "decorate-this",
+  "version": "0.0.1",
   "description": "Bare bones project template featuing FluxThis, Webpack, Mocha, and React.",
   "main": "index.js",
-  "scripts": {
-    "test": "gulp test"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mako-taco/react-fluxthis-webpack-mocha-gulp.git"
   },
   "scripts": {
-    "test": "gulp dev"
+    "test": "gulp test"
   },
   "keywords": ["decorators", "types", "annotation"],
   "author": "Jake Scott",

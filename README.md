@@ -3,6 +3,8 @@ Simple, vanilla JS type checking through ES7 decorators
 
 ...and a few other decorators, to boot.
 
+[![Build Status](https://travis-ci.org/mako-taco/DecorateThis.svg?branch=master)](https://travis-ci.org/mako-taco/DecorateThis)
+
 # Type Validation
 ```js
 import {param, returns} from 'DecorateThis';
