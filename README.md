@@ -211,3 +211,8 @@ class T {
 // Not OK
 (new T).method();
 ```
+
+# Incorporating in your project
+- Build your project with Babel
+- Enable stage 1 (experimental) features
+- Profit
