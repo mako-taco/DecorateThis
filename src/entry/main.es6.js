@@ -3,17 +3,19 @@ import {enumerable, writable, configurable} from 'properties';
 import memoize from 'memoize';
 
 module.exports = {
-	types: {
-		AnyOf,
-		ObjectOf,
-		ArrayOf,
-		Shape,
-		Optional,
-		Any
-	},
+	/* Type Validators */
+	AnyOf,
+	ObjectOf,
+	ArrayOf,
+	Shape,
+	Optional,
+	Any,
+
+	/* Properties */
 	enumerable,
 	writable,
 	configurable,
+
 	memoize,
 	returns,
 	param

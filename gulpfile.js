@@ -122,6 +122,20 @@ stopTestServer = nodefn.lift(function (callback) {
 
 webpackRun = nodefn.lift(nodefn.lift(webpack));
 
+gulp.task('test', ['dev'], function (callback) {
+	startTestServer()
+		.then(function () {
+			return runTests();
+		}, notifyBuildFailed)
+		.then(notifyTestsPassed, function (err) {
+			process.exit(1);
+			return notifyTestsFailed(err);
+		})
+		.ensure(function () {
+			return stopTestServer();
+		});
+});
+
 gulp.task('dev', function (callback) {
 	process.env.NODE_ENV = 'development';
 
@@ -131,11 +145,10 @@ gulp.task('dev', function (callback) {
 	});
 
 	webpackRun(config)
-		.then(startTestServer(), notifyBuildFailed)
-		.then(runTests())
-		.then(notifyTestsPassed, notifyTestsFailed)
-		.ensure(stopTestServer())
-		.done(callback);
+		.then(function (msg) {
+			
+		}, notifyBuildFailed)
+		.done(callback, callback);
 });
 
 gulp.task('prod', function (callback) {
@@ -147,11 +160,10 @@ gulp.task('prod', function (callback) {
 	});
 
 	webpackRun(config)
-		.then(startTestServer(), notifyBuildFailed)
-		.then(runTests())
-		.then(notifyTestsPassed, notifyTestsFailed)
-		.ensure(stopTestServer())
-		.done(callback);
+		.then(function (msg) {
+			
+		}, notifyBuildFailed)
+		.done(callback, callback);
 });
 
 gulp.task('watch', function (callback) {

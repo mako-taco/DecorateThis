@@ -10,7 +10,10 @@
     "type": "git",
     "url": "https://github.com/mako-taco/react-fluxthis-webpack-mocha-gulp.git"
   },
-  "keywords": [],
+  "scripts": {
+    "test": "gulp dev"
+  },
+  "keywords": ["decorators", "types", "annotation"],
   "author": "Jake Scott",
   "license": "ALv2.0",
   "dependencies": {
