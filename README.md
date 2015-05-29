@@ -131,7 +131,7 @@ import {
     ArrayOf,
     Optional,
     Any
-} from 'DecorateThis/types';
+} from 'DecorateThis';
 
 let util = {
     @param(ArrayOf(Any))
