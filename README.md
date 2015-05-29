@@ -2,6 +2,8 @@
 Simple, vanilla JS type checking through ES7 decorators
 ...and a few other decorators, to boot.
 
+If you like this project, be sure to check out [FluxThis](https://github.com/mako-taco/FluxThis), the immutable Flux framework by [AddThis](http://www.addthis.com).
+
 [![npm version](https://badge.fury.io/js/decorate-this.svg)](http://badge.fury.io/js/decorate-this)
 [![Build Status](https://travis-ci.org/mako-taco/DecorateThis.svg?branch=master)](https://travis-ci.org/mako-taco/DecorateThis)
 
@@ -29,8 +31,9 @@ class Point {
     }
 }
 ```
-Automatically memoize functions for greater efficiency
+
 # Memoization
+Automatically memoize functions for greater efficiency
 ```js
 import memoize from 'DecorateThis';
 let obj = {
