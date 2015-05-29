@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mako-taco/react-fluxthis-webpack-mocha-gulp.git"
+    "url": "https://github.com/mako-taco/DecorateThis.git"
   },
   "scripts": {
     "test": "gulp test"
