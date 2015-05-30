@@ -8,6 +8,8 @@ If you like this project, be sure to check out [FluxThis](https://github.com/add
 [![Build Status](https://travis-ci.org/mako-taco/DecorateThis.svg?branch=master)](https://travis-ci.org/mako-taco/DecorateThis)
 
 # Type Validation
+Throw errors when unexpected types are provided or returned from class or object
+functions. For more details, see the [Type Validator API](#typevalidatorapi).
 ```js
 import {param, returns} from 'DecorateThis';
 
