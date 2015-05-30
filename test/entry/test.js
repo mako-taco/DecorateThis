@@ -6,3 +6,4 @@ require('phantomjs-polyfill');
 require('babel-core/lib/babel/polyfill');
 
 require('param-test');
+require('curriable-test');
