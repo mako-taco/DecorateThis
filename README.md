@@ -63,6 +63,33 @@ class T {
 }
 ```
 
+# Currying
+Build up long argument lists with currying
+```js
+let obj = {
+    @curry
+    curriedAdd(a, b, c) {
+        return a + b + c;
+    }
+}
+
+let addToFive = obj.curriedAdd(5);   // Function
+let addToFiveAndThree = addFive(3);  // Function
+let sum = addToFiveAndThree(7);      // 15
+```
+
+# Debouncing
+Rate-limit expensive or frequently called functions
+
+```js
+let obj = {
+    @debounce(500) // call after 500ms of no further calls
+    debouncedFn(event) {
+        console.log(event.clientX, event.clientY);
+    }
+}
+```
+
 # Type Validator API
 Types can be expressed in a few ways:
  - A native constructor, like `Object` or `Boolean`

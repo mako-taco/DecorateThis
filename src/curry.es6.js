@@ -1,6 +1,6 @@
 'use strict';
 
-export default function curriable(target, name, descriptor) {
+export default function curry(target, name, descriptor) {
 	const value = descriptor.value || descriptor.initializer();
 	const argNames = value.toString()
 		.match(/\((.*?)\)/)[1]
@@ -8,17 +8,17 @@ export default function curriable(target, name, descriptor) {
 		.filter(argname => argname);
 
 	if (typeof value !== 'function') {
-		throw new TypeError('Only functions can be decorated with `curriable`.');
+		throw new TypeError('Only functions can be decorated with `curry`.');
 	}
 
 	if (argNames.length === 0) {
 		throw new Error('A function must have at least one named argument to be decorated with ' +
-			'`curriable`.');
+			'`curry`.');
 	}
 
-	descriptor.value = function curriedWrapper(...args) {
+	descriptor.value = function curryWrapper(...args) {
 		if (args.length < argNames.length) {
-			return function curriedBuilder(newArgs) {
+			return function curryBuilder(newArgs) {
 				return descriptor.value.call(this, ...(args.concat(newArgs)));
 			};
 		}
