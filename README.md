@@ -248,3 +248,7 @@ class T {
 - Build your project with Babel
 - Enable stage 1 (experimental) features
 - Profit
+
+# Changelog
+### v0.1.0
+- added support for `@curry` and `@debounce()`
