@@ -9,7 +9,7 @@ If you like this project, be sure to check out [FluxThis](https://github.com/add
 
 # Type Validation
 Throw errors when unexpected types are provided or returned from class or object
-functions. For more details, see the [Type Validator API](#typevalidatorapi).
+functions. For more details, see the [Type Validator API](s#type-validator-api).
 ```js
 import {param, returns} from 'DecorateThis';
 
@@ -30,6 +30,14 @@ class Point {
             (point.y - this.y) ** 2;
         
         return Math.sqrt(squaredDistance);
+    }
+    
+    // Two number args, no return value
+    @param(Number)
+    @param(Number)
+    addToDimensions(x, y) {
+        this.x += x;
+        this.y += y;
     }
 }
 ```
