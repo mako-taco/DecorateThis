@@ -3,6 +3,7 @@
 var config = require('./webpack.config');
 var gutil = require('gulp-util');
 var path = require('path');
+var os = require('os');
 var gulp = require('gulp');
 var nodefn = require('when/node');
 var server = require('./test/server');
@@ -71,10 +72,14 @@ process.env.NODE_PORT = process.env.NODE_PORT || 21113;
 
 runTests = nodefn.lift(function (callback) {
 	var url = 'http://localhost:' + process.env.NODE_PORT + '/index.html';
-	var file = path.join('node_modules','.bin','mocha-phantomjs');
+	var file = path.resolve('node_modules','.bin','mocha-phantomjs');
 	var args = ['-R', 'spec', url];
 
-	gutil.log('Starting unit tests');
+	if (os.platform() === 'win32') {
+		file += '.cmd';
+	}
+
+	gutil.log('Starting unit tests', file);
 	try {
 
 		execFile(file, args, function (err, stdout, stderr) {
