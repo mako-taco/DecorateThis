@@ -82,7 +82,7 @@ let obj = {
 }
 
 let addToFive = obj.curriedAdd(5);   // Function
-let addToFiveAndThree = addFive(3);  // Function
+let addToFiveAndThree = addToFive(3);  // Function
 let sum = addToFiveAndThree(7);      // 15
 ```
 
