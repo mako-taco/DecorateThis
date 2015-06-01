@@ -29,4 +29,24 @@ describe('debounce', () => {
 			}, 40);
 		}, 10);
 	});
+
+	it('should be instance specific', (done) => {
+		const t0 = new T();
+		const t1 = new T();
+
+		t0.highRateFn();
+		t1.highRateFn();
+
+		setTimeout(() => {
+			try {
+				t0.count.should.equal(1);
+				t1.count.should.equal(1);
+			}
+			catch(err) {
+				done(err);
+			}
+
+			done();
+		}, 40);
+	});
 });
