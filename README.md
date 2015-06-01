@@ -258,5 +258,7 @@ class T {
 - Profit
 
 # Changelog
+### v0.2.0
+- `@memoize` now properly works accross multiple instances of a class
 ### v0.1.0
 - added support for `@curry` and `@debounce()`
