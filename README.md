@@ -2,6 +2,10 @@
 Simple, vanilla JS type checking through ES7 decorators
 ...and a few other decorators, to boot.
 
+```
+npm install decorate-this
+```
+
 If you like this project, be sure to check out [FluxThis](https://github.com/addthis/FluxThis), the immutable Flux framework by [AddThis](http://www.addthis.com).
 
 [![npm version](https://badge.fury.io/js/decorate-this.svg)](http://badge.fury.io/js/decorate-this)
@@ -11,7 +15,7 @@ If you like this project, be sure to check out [FluxThis](https://github.com/add
 Throw errors when unexpected types are provided or returned from class or object
 functions. For more details, see the [Type Validator API](s#type-validator-api).
 ```js
-import {param, returns} from 'DecorateThis';
+import {param, returns} from 'decorate-this';
 
 class Point {
     constructor() {
@@ -45,7 +49,7 @@ class Point {
 # Memoization
 Automatically memoize functions for greater efficiency
 ```js
-import memoize from 'DecorateThis';
+import memoize from 'decorate-this';
 let obj = {
     // Results of the function are stored in a map, which maps arguments
     // to the function's result. This expensive func is only run a single
@@ -59,7 +63,7 @@ let obj = {
 
 # Property descriptors
 ```js
-import {enumerable, writable, configurable} from 'DecorateThis';
+import {enumerable, writable, configurable} from 'decorate-this';
 
 class T {
     @configurable(false)
@@ -171,7 +175,7 @@ import {
     ArrayOf,
     Optional,
     Any
-} from 'DecorateThis';
+} from 'decorate-this';
 
 let util = {
     @param(ArrayOf(Any))
