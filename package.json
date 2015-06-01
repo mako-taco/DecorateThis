@@ -1,6 +1,6 @@
 {
   "name": "decorate-this",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple, vanilla JS type checking through ES7 decorators ...and a few other decorators, to boot.",
   "main": "index.js",
   "repository": {
