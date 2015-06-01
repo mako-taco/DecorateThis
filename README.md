@@ -258,6 +258,10 @@ class T {
 - Profit
 
 # Changelog
+### v0.2.1
+- fixed a bug in `@memoize` which would cause a function to always compute new
+values
+- lint issues + removal of dead code
 ### v0.2.0
 - `@memoize` now properly works accross multiple instances of a class
 ### v0.1.0
