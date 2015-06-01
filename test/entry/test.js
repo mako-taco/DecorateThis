@@ -8,3 +8,4 @@ require('babel-core/lib/babel/polyfill');
 require('param-test');
 require('curry-test');
 require('debounce-test');
+require('memoize-test');

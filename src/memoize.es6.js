@@ -1,29 +1,24 @@
 'use strict';
 
-let memoized = new WeakMap();
+import WeakCompositeKeyMap from 'weak-composite-key-map';
+
+let memoized = new WeakCompositeKeyMap();
 
 function memoize(target, name, descriptor) {
-	let getter = descriptor.get;
-	let setter = descriptor.set;
-	let methods = {
-		get() {
-			let table = memoizationFor(this);
-			if (name in table) {
-				return table[name];
-			}
+	const value = descriptor.value || descriptor.initializer();
+	
+	descriptor.value = function (...args) {
+		let result = memoized.get([value, this, ...args]);
 
-			table[name] = getter.call(this);
-
-			return table[name];
-		},
-		set(val) {
-			let table = memoizationFor(this);
-			setter.call(this, val);
-			table[name] = val;
+		if (result) {
+			return result;
+		}
+		else {
+			result = value.apply(this, args);
+			memoized.set([value, this, ...args], result);
+			return result;
 		}
 	};
-
-	Object.assign(descriptor, methods);
 
 	return descriptor;
 }
