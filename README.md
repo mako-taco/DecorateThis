@@ -258,6 +258,9 @@ class T {
 - Profit
 
 # Changelog
+### v0.2.2
+- fixed a bug in `@debounce` which would cause multiple instances of a class to
+all debounce eachother's methods
 ### v0.2.1
 - fixed a bug in `@memoize` which would cause a function to always compute new
 values
