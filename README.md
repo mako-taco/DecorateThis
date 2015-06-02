@@ -262,7 +262,7 @@ class T {
 - Profit
 
 # Changelog
-### v0.3.0
+### v0.3.1
 - `npm install` of this module will now load an es5 compatible file
 
 ### v0.2.3
