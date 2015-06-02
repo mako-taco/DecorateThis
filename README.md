@@ -262,6 +262,9 @@ class T {
 - Profit
 
 # Changelog
+### v0.3.0
+- `npm install` of this module will now load an es5 compatible file
+
 ### v0.2.3
 - fixed a bug in `@debounce` which would cause multiple debounced methods of a 
 single class instance to debounce eachother

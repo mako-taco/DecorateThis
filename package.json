@@ -1,8 +1,8 @@
 {
   "name": "decorate-this",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Simple, vanilla JS type checking through ES7 decorators ...and a few other decorators, to boot.",
-  "main": "index.js",
+  "main": "dist/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/mako-taco/DecorateThis.git"
