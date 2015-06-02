@@ -262,8 +262,9 @@ class T {
 - Profit
 
 # Changelog
-### v0.3.1
-- `npm install` of this module will now load an es5 compatible file
+### v0.3.5
+- `npm install` of this module will now load an es5 compatible file using the
+babel runtime
 
 ### v0.2.3
 - fixed a bug in `@debounce` which would cause multiple debounced methods of a 
