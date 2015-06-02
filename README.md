@@ -262,6 +262,10 @@ class T {
 - Profit
 
 # Changelog
+### v0.2.3
+- fixed a bug in `@debounce` which would cause multiple debounced methods of a 
+single class instance to debounce eachother
+
 ### v0.2.2
 - fixed a bug in `@debounce` which would cause multiple instances of a class to
 all debounce eachother's methods
