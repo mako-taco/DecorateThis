@@ -1,10 +1,10 @@
 'use strict';
 
-const timeouts = new WeakMap();
 
 export default function debounceFactory(time = 500) {
 	return function debounce(target, name, descriptor) {
 		const value = descriptor.value || descriptor.initializer();
+		const timeouts = new WeakMap();
 
 		if (typeof value !== 'function') {
 			throw new TypeError('Only functions can be decorated with `debounce`.');
