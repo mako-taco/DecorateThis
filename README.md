@@ -265,6 +265,7 @@ class T {
 ### v0.2.3
 - fixed a bug in `@debounce` which would cause multiple debounced methods of a 
 single class instance to debounce eachother
+- added eslint to travis-ci builds
 
 ### v0.2.2
 - fixed a bug in `@debounce` which would cause multiple instances of a class to
