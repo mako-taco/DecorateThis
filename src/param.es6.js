@@ -240,7 +240,7 @@ export const ObjectOf = (type) => {
 };
 
 export const ArrayOf = (type) => {
-	return new Validator(function (path, value) {
+	return new Validator(function arrayOfValidator(path, value) {
 		if (!Array.isArray(value)) {
 			return new ValidatorResult(path, this.typeName, value);
 		}
@@ -261,7 +261,7 @@ export const Shape = (type) => {
 		throw new TypeError('Shape requires an object to validate against');
 	}
 
-	return new Validator(function (path, value) {
+	return new Validator(function shapeValidator(path, value) {
 		if (typeof value !== 'object') {
 			return new ValidatorResult(path, this.typeName, value);
 		}
