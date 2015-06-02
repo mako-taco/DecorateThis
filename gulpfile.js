@@ -127,7 +127,7 @@ stopTestServer = nodefn.lift(function (callback) {
 
 webpackRun = nodefn.lift(nodefn.lift(webpack));
 
-gulp.task('test', ['dev'], function (callback) {
+gulp.task('test', ['build'], function (callback) {
 	startTestServer()
 		.then(function () {
 			return runTests();
@@ -141,27 +141,12 @@ gulp.task('test', ['dev'], function (callback) {
 		});
 });
 
-gulp.task('dev', function (callback) {
+gulp.task('build', function (callback) {
 	process.env.NODE_ENV = 'development';
 
 	config.forEach(function (config) {
 		config.devtool = 'source-map';
 		config.debug = true;
-	});
-
-	webpackRun(config)
-		.then(function (msg) {
-			
-		}, notifyBuildFailed)
-		.done(callback, callback);
-});
-
-gulp.task('prod', function (callback) {
-	process.env.NODE_ENV = 'production';
-
-	config.forEach(function (config) {
-		config.optimize = true;
-		config.output.filename = '[filename].min.js'
 	});
 
 	webpackRun(config)

@@ -4,7 +4,7 @@ var cache = {};
 var loaders = [
 	{
 		test: /\.es6\.js$/,
-		loader: 'babel-loader?stage=1'
+		loader: 'babel-loader?optional[]=runtime&stage=1'
 	}
 ];
 var extensions = [
@@ -17,10 +17,12 @@ module.exports = [{
 		loaders: loaders
 	},
 	entry: {
-		main: './src/entry/main',
+		main: './src/entry/main'
 	},
 	output: {
 		path: './dist',
+		library: 'decorate-this',
+		libraryTarget: 'umd',
 		filename: '[name].js'
 	},
 	resolve: {
