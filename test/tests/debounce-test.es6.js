@@ -9,6 +9,11 @@ class T {
 	highRateFn() {
 		this.count++;
 	}
+
+	@debounce(20)
+	decrementFn() {
+		this.count--;
+	}
 }
 
 describe('debounce', () => {
@@ -44,6 +49,24 @@ describe('debounce', () => {
 			}
 			catch(err) {
 				done(err);
+			}
+
+			done();
+		}, 40);
+	});
+
+	it('should work with multiple debounced methods in one class', (done) => {
+		const t = new T();
+
+		t.highRateFn();
+		t.decrementFn();
+
+		setTimeout(() => {
+			try {
+				t.count.should.equal(0);
+			}
+			catch(err) {
+				return done(err);
 			}
 
 			done();
