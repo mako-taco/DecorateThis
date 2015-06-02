@@ -1,6 +1,6 @@
 {
   "name": "decorate-this",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Simple, vanilla JS type checking through ES7 decorators ...and a few other decorators, to boot.",
   "main": "dist/main.js",
   "repository": {
@@ -10,7 +10,11 @@
   "scripts": {
     "test": "gulp test"
   },
-  "keywords": ["decorators", "types", "annotation"],
+  "keywords": [
+    "decorators",
+    "types",
+    "annotation"
+  ],
   "author": "Jake Scott",
   "license": "ALv2.0",
   "devDependencies": {
@@ -30,6 +34,7 @@
     "when": "^3.7.2"
   },
   "dependencies": {
+    "babel-runtime": "^5.4.7",
     "css-loader": "^0.9.1",
     "style-loader": "^0.9.0"
   }

@@ -1,3 +1,4 @@
+import runtime from 'babel-runtime/core-js';
 import {AnyOf, ObjectOf, ArrayOf, Shape, Optional, Any, returns, param} from 'param';
 import {enumerable, writable, configurable} from 'properties';
 import memoize from 'memoize';
