@@ -1,3 +1,10 @@
 language: node_js
+install:
+  - "npm install -g eslint"
+  - "npm install -g babel-eslint"
+  - "npm install"
+script:
+  -  "eslint src/"
+  -  "npm test"
 node_js:
   - "stable"
