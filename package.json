@@ -1,6 +1,6 @@
 {
   "name": "decorate-this",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Simple, vanilla JS type checking through ES7 decorators ...and a few other decorators, to boot.",
   "main": "dist/main.js",
   "repository": {
@@ -13,9 +13,8 @@
   "keywords": ["decorators", "types", "annotation"],
   "author": "Jake Scott",
   "license": "ALv2.0",
-  "dependencies": {
+  "devDependencies": {
     "console-polyfill": "^0.2.1",
-    "css-loader": "^0.9.1",
     "express": "^4.12.3",
     "gulp": "^3.8.11",
     "mocha-phantomjs": "^3.5.3",
@@ -23,13 +22,15 @@
     "phantomjs-polyfill": "0.0.1",
     "should": "^5.2.0",
     "source-map-support": "^0.2.10",
-    "style-loader": "^0.9.0",
     "watch": "^0.14.0",
     "babel-core": "^5.4.7",
     "babel-loader": "^5.1.3",
     "gulp-util": "^3.0.4",
     "node-notifier": "^4.1.2",
-    "react": "^0.13.3",
     "when": "^3.7.2"
+  },
+  "dependencies": {
+    "css-loader": "^0.9.1",
+    "style-loader": "^0.9.0"
   }
 }
