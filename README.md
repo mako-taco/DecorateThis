@@ -54,7 +54,7 @@ let obj = {
     // Results of the function are stored in a map, which maps arguments
     // to the function's result. This expensive func is only run a single
     // time for a given a/b pair.
-    @memoized
+    @memoize
     expensiveFunc(a, b) {
         return Math.sin(Math.sqrt(a ** b));
     }
