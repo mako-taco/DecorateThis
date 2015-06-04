@@ -2,11 +2,20 @@
 Simple, vanilla JS type checking through ES7 decorators
 ...and a few other decorators, to boot.
 
-[Changelog](/docs/CHANGELOG.md)
-[Validating Complex Types](/docs/TYPE_VALIDATOR_API.md)
-```
-npm install decorate-this
-```
+- [Installation](#incorporating-in-your-project)
+- [Changelog](/docs/CHANGELOG.md)
+- Documentation
+  - [Type validation](#type-validation)
+    - [param](#type-validation)
+    - [returns](#type-validation)
+    - [promises](#promises)
+    - [Validating Complex Types](/docs/TYPE_VALIDATOR_API.md)
+  - [memoize](#memoization)
+  - [debounce](#debouncing)
+  - [curry](#currying)
+  - [configurable](#property-descriptors)
+  - [writable](#property-descriptors)
+  - [enumerable](#property-descriptors)
 
 If you like this project, be sure to check out [FluxThis](https://github.com/addthis/FluxThis), the immutable Flux framework by [AddThis](http://www.addthis.com).
 
@@ -116,3 +125,12 @@ let obj = {
     }
 }
 ```
+
+# Incorporating in your project
+```
+npm install decorate-this
+```
+
+- Build your project with Babel
+- Enable stage 1 (experimental) features
+- Profit
