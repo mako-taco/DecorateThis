@@ -1,10 +1,13 @@
-const memoize = require('memoize');
+'use strict';
+
+import memoize from 'memoize';
 
 class T {
 	constructor(start) {
 		this.start = start;
 	}
 
+	@memoize
 	method(a, b) {
 		return a + b + this.start;
 	}

@@ -1,6 +1,5 @@
 'use strict';
 
-
 export default function debounceFactory(time = 500) {
 	return function debounce(target, name, descriptor) {
 		const value = descriptor.value || descriptor.initializer();

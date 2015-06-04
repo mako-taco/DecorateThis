@@ -26,6 +26,7 @@
     "no-underscore-dangle": 0,
     "guard-for-in": 0,
     "new-cap": 0,
+    "no-trailing-spaces": 0,
 
     // ES6 Specific Linting
     "object-shorthand": [2, "always"],
@@ -50,6 +51,7 @@
   "env":{
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "mocha": true
   }
 }

@@ -1,4 +1,7 @@
-import {param, Any, AnyOf, ObjectOf, ArrayOf, Optional} from 'param';
+'use strict';
+
+import {Any, AnyOf, ArrayOf} from 'typedefs';
+import param from 'param';
 
 describe('param', () => {
 
@@ -9,7 +12,7 @@ describe('param', () => {
 
 		@param(String)
 		mirror(i) {
-			return i
+			return i;
 		}
 
 		@param(Number)
@@ -124,7 +127,7 @@ describe('param', () => {
 
 	describe('when validating an array of types', () => {
 		let t = new T();
-		let simple = [1,2,3];
+		let simple = [1, 2, 3];
 		let complex = [{name: 'ted', age: 30}, {name: 'bob', age: 20}];
 		let badSimple = [1, 2, 'asd'];
 		let badComplex = [{name: 'ted', age: 30}, {age: 20}];

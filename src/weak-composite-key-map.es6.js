@@ -1,6 +1,7 @@
 'use strict';
 
-import {param, Any} from 'param';
+import param from 'param';
+import {Any} from 'typedefs';
 
 export default class WeakCompositeKeyMap {
 	constructor() {
@@ -26,7 +27,7 @@ export default class WeakCompositeKeyMap {
 	@param(Array)
 	get(keys) {
 		let next = this.weakMap;
-		for (let i = 0; i < keys.length - 1; i++) {
+		for (let i = 0; i < keys.length; i++) {
 			next = next.get(keys[i]);
 			if (next === undefined) {
 				break;

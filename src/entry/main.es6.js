@@ -1,6 +1,11 @@
-import {AnyOf, ObjectOf, ArrayOf, Shape, Optional, Any, returns, param} from 'param';
+import {AnyOf, ObjectOf, ArrayOf, Shape, Optional, Any} from 'typedefs';
 import {enumerable, writable, configurable} from 'properties';
+import returns from 'returns';
+import param from 'param';
+import promises from 'promises';
 import memoize from 'memoize';
+import debounce from 'debounce';
+import curry from 'curry';
 
 module.exports = {
 	/* Type Validators */
@@ -17,6 +22,9 @@ module.exports = {
 	configurable,
 
 	memoize,
+	promises,
 	returns,
-	param
+	param,
+	curry,
+	debounce
 };
