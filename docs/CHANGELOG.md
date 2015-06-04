@@ -1,8 +1,19 @@
 # Changelog
 
+### v0.4.0
+- broke up `param` file into smaller, more reusable components
+- fixed a bug in `WeakCompositeKeyMap` which would cause a map of results to be
+returned instead of the correct value
+- added `@promises` decorator, which checks promised values
+
+### v0.3.5
+- `npm install` of this module will now load an es5 compatible file using the
+babel runtime
+
 ### v0.2.3
-- fixed a bug in `@debounce` which would cause multiple debounced methods of a 
+- fixed a bug in `@debounce` which would cause multiple debounced methods of a
 single class instance to debounce eachother
+- added eslint to travis-ci builds
 
 ### v0.2.2
 - fixed a bug in `@debounce` which would cause multiple instances of a class to
