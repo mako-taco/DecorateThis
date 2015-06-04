@@ -22,7 +22,7 @@ class Point {
         this.x = 0;
         this.y = 0;
     }
-    
+
     // The first param of this method takes a Point, and will throw
     // a type error if a non-Point is passed
     @param(Point)
@@ -30,12 +30,12 @@ class Point {
     // be thrown before the value is returned.
     @returns(Number)
     distanceTo(point) {
-        let squaredDistance = (point.x - this.x) ** 2 + 
+        let squaredDistance = (point.x - this.x) ** 2 +
             (point.y - this.y) ** 2;
-        
+
         return Math.sqrt(squaredDistance);
     }
-    
+
     // Two number args, no return value
     @param(Number)
     @param(Number)
@@ -102,15 +102,28 @@ let obj = {
 }
 ```
 
+# Promises
+Similar to `returns`, but validates the fulfillment value of a promise
+```js
+let obj = {
+    @promises(ArrayOf(Number))
+    getPoints() {
+        return new Promise(resolve => {
+            setTimeout(() => resolve([1, 2, 3]), 5000);
+        });
+    }
+}
+```
+
 # Type Validator API
 Types can be expressed in a few ways:
  - A native constructor, like `Object` or `Boolean`
  - A constuctor or class, like `Point`
  - An object literal, for duck-typing, like `{name: String, age: Number}`
  - A special helper function from `types`, like `ArrayOf(String)`
- 
+
 ## Native Constructor Types
-The most common types to check for. All other type checks are built around 
+The most common types to check for. All other type checks are built around
 these.
 
 ```js
@@ -134,7 +147,7 @@ class T {
     constructor() {
 
     }
-    
+
     @param(T)
     doThing(t) {
 
@@ -159,7 +172,7 @@ class T {
 (new T).method({hello: 'hi', info: {age: 5}})
 
 // throws error, info.age is not a number
-(new T).method({hello: 'hi', info: {age: '5', color: 'red'}}) 
+(new T).method({hello: 'hi', info: {age: '5', color: 'red'}})
 ```
 
 As with all types, these are composable.
@@ -168,7 +181,7 @@ As with all types, these are composable.
 DecorateThis provides a small library of helper functions for doing type
 validation.
 
-```js 
+```js
 import {
     AnyOf,
     ObjectOf,
@@ -262,12 +275,18 @@ class T {
 - Profit
 
 # Changelog
+### v0.4.0
+- broke up `param` file into smaller, more reusable components
+- fixed a bug in `WeakCompositeKeyMap` which would cause a map of results to be
+returned instead of the correct value
+- added `@promises` decorator, which checks promised values
+
 ### v0.3.5
 - `npm install` of this module will now load an es5 compatible file using the
 babel runtime
 
 ### v0.2.3
-- fixed a bug in `@debounce` which would cause multiple debounced methods of a 
+- fixed a bug in `@debounce` which would cause multiple debounced methods of a
 single class instance to debounce eachother
 - added eslint to travis-ci builds
 
