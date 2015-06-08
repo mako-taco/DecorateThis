@@ -26,6 +26,7 @@
     "express": "^4.12.3",
     "gulp": "^3.8.11",
     "gulp-util": "^3.0.4",
+    "immutable": "^3.7.3",
     "mocha-phantomjs": "^3.5.3",
     "node-notifier": "^4.1.2",
     "phantomjs": "^1.9.16",
