@@ -11,3 +11,4 @@ require('debounce-test');
 require('memoize-test');
 require('returns-test');
 require('promises-test');
+require('collection-test');
