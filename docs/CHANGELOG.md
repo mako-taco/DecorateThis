@@ -1,5 +1,12 @@
 # Changelog
 
+### v0.5.0
+- added `KeyedCollection`
+- added `TypedCollection`
+- `WeakCompositeKeyMap` now implements `has`
+- fixed a major bug in `@param` which caused all methods in a class to share a
+param list
+
 ### v0.4.0
 - broke up `param` file into smaller, more reusable components
 - fixed a bug in `WeakCompositeKeyMap` which would cause a map of results to be
