@@ -6,8 +6,22 @@ const targetParams = new WeakMap();
 
 export default function param(type, description) {
 	return (target, name, descriptor) => {
-		const firstTime = !targetParams.has(target);
-		const params = targetParams.get(target) || [];
+		let firstTime = false;
+		let nameMap = targetParams.get(target);
+
+		if (!nameMap) {
+			nameMap = new Map();
+			targetParams.set(target, nameMap);
+		}
+
+		let params = nameMap.get(name);
+
+		if (!params) {
+			firstTime = true;
+			params = [];
+			nameMap.set(name, params);
+		}
+
 		params.push({type, description});
 
 		if (firstTime) {
@@ -53,7 +67,5 @@ export default function param(type, description) {
 
 			return descriptor;
 		}
-
-		targetParams.set(target, params);
 	};
 }

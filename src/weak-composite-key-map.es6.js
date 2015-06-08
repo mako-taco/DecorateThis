@@ -36,4 +36,9 @@ export default class WeakCompositeKeyMap {
 
 		return next;
 	}
+
+	@param(Array)
+	has(keys) {
+		return Boolean(this.get(keys) !== undefined);
+	}
 }
