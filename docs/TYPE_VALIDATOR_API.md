@@ -199,7 +199,7 @@ t.doThing(Immutable.fromJS({name: 'Jake', age: 25})) //OK
 ```
 
 ### TypedCollection
-A keyed collection is used to validate an argument which is a complex data
+A typed collection is used to validate an argument which is a complex data
 structure that can be reduced to a (possibly deep) array of typed values.
 
 You provide three values to `TypedCollection` to create a validator:
