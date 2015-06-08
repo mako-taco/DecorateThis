@@ -151,3 +151,91 @@ class T {
 // Not OK
 (new T).method();
 ```
+
+## Custom collections
+Use these methods to create validators which work on your own collection data
+structures, such as those in ImmutableJS. 
+
+### KeyedCollection
+A keyed collection is used to validate an argument which is a complex data
+structure that can be reduced to (possibly deep) key-value pairs.
+
+You provide three values to `KeyedCollection` to create a validator:
+ - `constructor`: used for an `instanceof` check against the entire collection
+ - `transform`: passed the collection, must return a plain object which
+    represents the data held by the collection
+ - `name`: a human-readable name for the type of collection. Used to generate
+    meaningful error messages
+
+A function will be returned, which takes a single argument: `shape`. This new
+function checks values in the following way:
+ 1. `value` is tested to be an instanceof `collection`
+ 2. `value` is passed to transform
+ 3. the transformed value is checked against `shape` in the same way that normal
+    objects are checked via duck-types
+
+```js
+import {KeyedCollection} from 'collection-defs';
+import Immutable from 'immutable';
+
+const ImmutableMap = KeyedCollection({
+    constructor: Immutable.Map, 
+    transform: x => x.toObject(),
+    name: 'ImmutableMap'
+});
+
+class T {
+    @param(ImmutableMap({name: String, age: Number}))
+    doThing(person) {
+
+    }
+}
+
+const t = new T();
+
+t.doThing({name: 'Jake', age: 25}); //throws error, not ImmutableMap
+t.doThing(Immutable.fromJS({name: 'Jake'}); //throws error, age is not a number
+t.doThing(Immutable.fromJS({name: 'Jake', age: 25})) //OK
+```
+
+### TypedCollection
+A keyed collection is used to validate an argument which is a complex data
+structure that can be reduced to a (possibly deep) array of typed values.
+
+You provide three values to `TypedCollection` to create a validator:
+ - `constructor`: used for an `instanceof` check against the entire collection
+ - `transform`: passed the collection, must return an array which represents the
+    data held by the collection
+ - `name`: a human-readable name for the type of collection. Used to generate
+    meaningful error messages
+
+A function will be returned, which takes a single argument: `type`. This new
+function checks values in the following way:
+ 1. `value` is tested to be an instanceof `collection`
+ 2. `value` is passed to transform
+ 3. Each member of the array that results from `transform(value)` will be tested
+    against `type`
+
+```js
+import {KeyedCollection} from 'collection-defs';
+import Immutable from 'immutable';
+
+const ImmutableMapOf = TypedCollection({
+    constructor: Immutable.Map, 
+    transform: x => x.toObject(),
+    name: 'ImmutableMap'
+});
+
+class T {
+    @param(ImmutableMapOf(Number))
+    doThing(ages) {
+
+    }
+}
+
+const t = new T();
+
+t.doThing({jake: 25, josh: 24}); //throws error, not ImmutableMap
+t.doThing(Immutable.fromJS({name: 'Jake', age: 25})) //throws error, name is not `Number`
+t.doThing(Immutable.fromJS({jake: 25, josh: 24}); //OK
+```
